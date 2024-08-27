@@ -39,7 +39,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4  # Use a version tag instead of a commit hash
         with:
-          images: ${{ env.DOCKER_REGISTRY }}/react-app:v1
+          images: ${{ env.DOCKER_REGISTRY }}/react-app
 
       - name: Build and push docker image
         id: build-and-push
