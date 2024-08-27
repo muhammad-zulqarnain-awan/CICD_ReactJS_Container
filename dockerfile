@@ -1,19 +1,24 @@
-FROM node:14-alpine
+FROM node:alpine as build
 
 LABEL maintainer="Muhammad-Zulqarnain-Awan"
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
 
-RUN npm run build && npm install -g serve
+RUN npm run build
 
-WORKDIR /app/dist
+# COPY BUILD FROM NODE CONTAINER TO NGINX CONTAINER
+FROM nginx:alpine
 
-EXPOSE 3000
+WORKDIR /usr/share/nginx/html
 
-CMD [ "serve" ]
+RUN rm -rf *
+
+COPY --from=build /app/dist ./
+
+EXPOSE 80
