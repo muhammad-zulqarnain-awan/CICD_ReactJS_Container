@@ -33,7 +33,7 @@ jobs:
         run: |
           docker build -t zulqarnain1001/react-app-image:latest
 
-      - name: Log into registry
+      - name: Log into registry ${{ env.DOCKER_REGISTRY }}
         if: github.event_name != 'pull_request'
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d  # Use a version tag instead of a commit hash
         with:
