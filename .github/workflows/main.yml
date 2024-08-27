@@ -30,7 +30,7 @@ jobs:
 
       - name: Log into registry ${{ env.DOCKER_REGISTRY }}
         if: github.event_name != 'pull_request'
-        uses: docker/login-action@v1  # Use a version tag instead of a commit hash
+        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d  # Use a version tag instead of a commit hash
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
           username: ${{ env.DOCKER_USERNAME }}
