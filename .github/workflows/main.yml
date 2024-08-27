@@ -31,7 +31,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t zulqarnain1001/react-app-image:latest
+          docker build -t zulqarnain1001/react-app-image:latest .
 
       - name: Log into registry ${{ env.DOCKER_REGISTRY }}
         if: github.event_name != 'pull_request'
