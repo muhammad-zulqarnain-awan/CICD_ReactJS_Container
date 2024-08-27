@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import githubLogo from './assets/github.png'
+import linkedinLogo from './assets/linkedin.png'
 import './App.css'
 
 function App() {
@@ -9,11 +9,11 @@ function App() {
   return (
     <>
       <div>
-        <a href="#">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+        <a href="https://linkedin.com/in/zulqarnainawan" target="_blank">
+          <img src={linkedinLogo} className="logo" alt="LinkedIn logo" />
         </a>
-        <a href="#">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://github.com/muhammad-zulqarnain-awan" target="_blank">
+          <img src={githubLogo} className="logo" alt="GitHub logo" />
         </a>
       </div>
       <h1>Counter</h1>
@@ -27,16 +27,14 @@ function App() {
       <p className="read-the-docs">
         Containerize ReactJS app and Push to DockerHub using GitHub Actions
       </p>
-      <p>Project by - Muhammad Zulqarnain</p>
+      <br />
       <p>
-        <a href="https://linkedin.com/in/zulqarnainawan" target="_blank">
-          LinkedIn
-        </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="https://github.com/muhammad-zulqarnain-awan" target="_blank">
-          GitHub
+        <a href="https://github.com/muhammad-zulqarnain-awan/CICD_ReactJS_Container.git">
+          Click to See the Project Source Code
         </a>
       </p>
+      <br /><br />
+      <p>Developed By: Muhammad Zulqarnain</p>
     </>
   );
 }
