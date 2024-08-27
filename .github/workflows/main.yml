@@ -27,7 +27,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2  # Use a version tag instead of a commit hash
 
-      - name: Log into registry
+      - name: Log into registry ${{ env.DOCKER_REGISTRY }}
         if: github.event_name != 'pull_request'
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d  # Use a version tag instead of a commit hash
         with:
@@ -37,9 +37,9 @@ jobs:
 
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@v4  # Use a version tag instead of a commit hash
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38  # Use a version tag instead of a commit hash
         with:
-          images: ${{ env.DOCKER_REGISTRY }}\react-app
+          images: ${{ env.DOCKER_REGISTRY }}/react-app
 
       - name: Build and push docker image
         id: build-and-push
