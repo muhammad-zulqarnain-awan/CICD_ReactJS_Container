@@ -31,6 +31,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d  # Use a version tag instead of a commit hash
         with:
+          registry: ${{ env.DOCKER_REGISTRY }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
@@ -38,7 +39,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4  # Use a version tag instead of a commit hash
         with:
-          images: zulqarnain1001/react-app:v1
+          images: ${{ env.DOCKER_REGISTRY }}/react-app:v1
 
       - name: Build and push docker image
         id: build-and-push
