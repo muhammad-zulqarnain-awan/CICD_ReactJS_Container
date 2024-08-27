@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:14-alpine
 
 LABEL maintainer="Muhammad-Zulqarnain-Awan"
 
@@ -10,8 +10,10 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build && cd ./dist
+RUN npm run build && npm install -g serve
+
+WORKDIR /app/dist
 
 EXPOSE 3000
 
-CMD ["serve"]
+CMD [ "serve" ]
